@@ -1,0 +1,135 @@
+{% load static %}
+<!--Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/-->
+<!DOCTYPE html>
+<html>
+<head>
+<title> Hope Foundation Bootstrap Website Template| Home :: w3layouts</title>
+<link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+<link href="/static/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+<!--web-fonts-->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<!--js-->
+<script src="/static/js/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="/static/js/move-top.js"></script>
+<script type="text/javascript" src="/static/js/easing.js"></script>
+	<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+	</script>
+<!-- //end-smoth-scrolling -->
+</head>
+<body>
+<!--header start here-->
+<div class="mother-grid">
+	<div class="container">
+		<div class="header">
+			<div class="header-left">
+				  <a href="/static/index.html"> <img src="/static/images/logo.png"> </a>
+			</div>
+			<span class="menu"> <img src="/static/images/icon-1.png"></span>
+			<div class="clear"> </div>
+			<div class="header-right">
+				  <ul class="res"> 
+					<li><a href="/adminhome">Home</a></li>
+					<li><a href="/addstaff">Add User</a></li>
+					<li><a href="/mstaff">Analyse & Report</a></li>
+					<li><a href="/pic">Photo Analyser</a></li>
+					<li><a href="/video">Video Analyser</a></li>
+				  	   <li><a href="/logout">Logout</a></li>		
+				  </ul>
+				   <script>
+			                                                      $( "span.menu").click(function() {
+			                                                                                        $(  "ul.res" ).slideToggle("slow", function() {
+			                                                                                         // Animation complete.
+			                                                                                         });
+			                                                                                         });
+		                                                     </script>
+			</div>
+	<div class="clearfix"> </div>
+		</div>
+	</div><br />
+	<img src="/static/images/001.jpg" class="img img-responsive" style="width:100%;" />
+</div>
+<!--header end here-->
+<!--about start here-->
+<div class="about">
+	
+	<div class="container">
+		
+		<div class="about-main">			
+			<div class="col-md-3 about-left">
+
+            </div>
+			<div class="col-md-6 about-right">
+                <h3>Report</h3>
+                {%if st%}
+                <div class="alert alert-success">
+				<b>Name : {{st.1}}</b>	<br />
+                Call : {{st.3}}<br />
+                Address : {{st.2}}	
+                </div>				
+                <center><h4><B>ANALYSE RESULT</B></h4>
+					{%if d1.0 > d2.0 %}
+					<img src="/static/images/happy.png" class="img img-responsive" style="width:150px;" /><br />
+					<h4 style="background-color: green; color:white; padding: 10px;">Not Stressed</h4> 
+					{%else%}
+					<img src="/static/images/stress.jpg" class="img img-responsive" style="width:150px;" /><br />
+					<h4 style="background-color: red; color:white; padding: 10px;">STRESSED</h4>               
+					{%endif%}
+					</center>
+					Happy Ratio : <meter id="abc" value="{{p}}" min="0" max="100"></meter><br>
+					Stress Ratio : <meter id="abc" value="{{n}}" min="0" max="100"></meter><br>                
+					{%endif%}	
+			</div>
+            <div class="col-md-3 about-left">
+
+            </div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+</div>
+<!--about end here-->
+<!--about banner start here-->
+
+<!--about banner end here-->
+<!--footer start here-->
+
+<!--/footer end here-->
+<!--copyrights start here-->
+<div class="copyright">
+	<div class="container">
+		<div class="copy-right-main">
+			<div class="col-md-6 copy-left">
+				<p>2014 &copy Template by <a href="/static/http://w3layouts.com/">  W3LAYOUTS</a></p>
+			</div>
+			 <script type="text/javascript">
+									$(document).ready(function() {
+										/*
+										var defaults = {
+								  			containerID: 'toTop', // fading element id
+											containerHoverID: 'toTopHover', // fading element hover id
+											scrollSpeed: 1200,
+											easingType: 'linear' 
+								 		};
+										*/
+										
+										$().UItoTop({ easingType: 'easeOutQuart' });
+										
+									});
+								</script>
+					<a href="/static/#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
